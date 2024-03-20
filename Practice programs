@@ -1,0 +1,29 @@
+//WAP to check whether the entered number is even or odd
+#include<iostream>
+
+class num_check{
+    
+    private:
+    int v;
+    
+    public:
+    void input(){
+        std::cout << "Enter the number :"<< std::endl;
+        std::cin >> v;
+    }
+    
+    void check(){
+        if(v%2==0){
+            std::cout << "Even";
+        }
+        else{
+            std::cout << "Odd";
+        }
+    }
+};
+
+int main(){
+    num_check obj;
+    obj.input();
+    obj.check();
+}
