@@ -1,2 +1,2 @@
-# C-_programs
+# Cpp programs
 C++ programs for better understanding
