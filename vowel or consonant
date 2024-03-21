@@ -1,0 +1,30 @@
+#include <iostream>
+using namespace std;
+
+int main() {
+   
+   char alpha;
+   cout << "Enter an alphabet: ";
+   scanf("%c",&alpha);
+   
+   alpha = tolower(alpha);
+   
+   if((alpha>='a' && alpha<='z')){
+       switch(alpha){
+           case'a':
+           case'e':
+           case'i':
+           case'u':
+             cout << alpha << " is a vowel" << endl;
+             break;
+           default:
+             cout << alpha << "is a consonant "<< endl;
+       }
+   }
+   else{
+       cout << "Invalid input. Please enter an alphbet. "<< endl;
+   }
+   
+
+    return 0;
+}
