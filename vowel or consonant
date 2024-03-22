@@ -18,7 +18,7 @@ int main() {
              cout << alphabet << " is a vowel" << endl;
              break;
            default:
-             cout << alphabet << "is a consonant "<< endl;
+             cout << alphabet << " is a consonant "<< endl;
        }
    }
    else{
