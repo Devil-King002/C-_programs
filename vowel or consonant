@@ -3,26 +3,26 @@ using namespace std;
 
 int main() {
    
-   char alpha;
+   char alphabet;
    cout << "Enter an alphabet: ";
-   scanf("%c",&alpha);
+   scanf("%c",&alphabet);
    
-   alpha = tolower(alpha);
+   alphabet = tolower(alphabet);
    
-   if((alpha>='a' && alpha<='z')){
-       switch(alpha){
+   if((alphabet>='a' && alphabet<='z')){
+       switch(alphabet){
            case'a':
            case'e':
            case'i':
            case'u':
-             cout << alpha << " is a vowel" << endl;
+             cout << alphabet << " is a vowel" << endl;
              break;
            default:
-             cout << alpha << "is a consonant "<< endl;
+             cout << alphabet << "is a consonant "<< endl;
        }
    }
    else{
-       cout << "Invalid input. Please enter an alphbet. "<< endl;
+       cout << "Invalid input. Please enter an alphabet. "<< endl;
    }
    
 
