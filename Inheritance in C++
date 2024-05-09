@@ -1,0 +1,58 @@
+//Inheritance in C++
+#include<iostream>
+using namespace std;
+
+class Parent
+{
+    private:
+    void show()
+    {
+        cout<<"Show of Parent"<<endl;
+    }
+    public:
+    void display()
+    {
+        cout<<"Display of Parent"<<endl;
+    }
+    protected:
+    void put()
+    {
+        cout<<"Put of Parent"<<endl;
+    }
+};
+
+class Child: private Parent
+{
+  private:
+    void showChild()
+    {   //display(); -> inherit from parent class
+        // put();-> inherit from parent class in private mode
+        cout<<"Show of Child"<<endl;
+    }
+    public:
+    void displayChild()
+    {   
+        display();//can use like this to display the inherit (in private) methods
+        put();
+        cout<<"Display of Child"<<endl;
+    }
+    protected:
+    void putChild()
+    {
+        cout<<"Put of Child"<<endl;
+    }  
+};
+
+int main()
+{
+    Parent prnt;//object of Parent class
+    Child chld;//object of Child  Class
+    
+    //prnt.show();//result in error because show() is in private access specifier
+    prnt.display();//print "Display of Parent"
+    //prnt.put();//result in error because put() is in protected access specifier
+    
+    chld.displayChild();
+    
+    return 0;
+}
