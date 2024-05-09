@@ -106,3 +106,64 @@ int main()
     cout<<"Total number of Fruits in a basket are :";
     cout<<obja.fruit_no+objm.fruit_no;
 }
+
+/*2. Create a class name shape with a function that prints "This is a shape".
+Create another class name polygon inheriting, the shape class with the same function [show()] that prints "Ploygon is a shape"
+Create two other classes name rectangle and triangle having the same function, which prints "Rectangle is a polygon" and "Triangle is a polygon" respectively.
+Again make another class name square again having same function, which print "Square is a rectangle"
+Now try calling the function by the object of these classes
+*/
+#include <iostream>
+
+using namespace std;
+
+class Shape {
+public:
+    void show() {
+        cout << "This is a shape" << endl;
+    }
+};
+
+class Polygon : public Shape {
+public:
+    void show(){
+        cout << "Polygon is a shape" << endl;
+    }
+};
+
+class Rectangle : public Polygon {
+public:
+    void show(){
+        cout << "Rectangle is a polygon" << endl;
+    }
+};
+
+class Triangle : public Polygon {
+public:
+    void show(){
+        cout << "Triangle is a polygon" << endl;
+    }
+};
+
+class Square : public Rectangle {
+public:
+    void show(){
+        cout << "Square is a rectangle" << endl;
+    }
+};
+
+int main() {
+    Shape shape;
+    Polygon polygon;
+    Rectangle rectangle;
+    Triangle triangle;
+    Square square;
+
+    shape.show();
+    polygon.show();
+    rectangle.show();
+    triangle.show();
+    square.show();
+
+    return 0;
+}
