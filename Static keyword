@@ -1,0 +1,26 @@
+// Static keyword in C++
+#include <iostream>
+using namespace std;
+class Test
+{
+    public:
+    void mymethod()
+    {
+        static int var1=10;
+        int var2=10;
+        cout<<"Static Variable :"<<var1<<endl;
+        cout<<"Non-static variable :"<<var2<<endl;
+        var1++;
+        var2++;
+    }
+};
+int main() 
+{
+    Test obj,obj2,obj3;
+    obj.mymethod();
+    cout<<"Now by the second object :"<<endl;
+    obj2.mymethod();
+    cout<<"Now by the third object :"<<endl;
+    obj3.mymethod();
+    return 0;
+}
