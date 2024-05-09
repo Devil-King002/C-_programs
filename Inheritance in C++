@@ -56,3 +56,53 @@ int main()
     
     return 0;
 }
+
+//Question:
+/*1. Make a class name 'Fruit' with data members to calculate the number of fruit in a basket.
+Create two other classes name 'Apples' and 'Mangoes' to calculate the number of apples and mangoes in a basket.
+Print number of fruit of each type and total number of fruit in a basket.
+*/
+#include<iostream>
+using namespace std;
+
+class Fruit
+{
+    public:
+    int fruit_no;
+};
+class Apples:public Fruit
+{
+    public:
+    void get_apples()
+    {
+        cout<<"Enter numberof apples :"<< endl;
+        cin>>fruit_no;
+    }
+};
+class Mangoes:public Fruit
+{
+    public:
+    void get_mangoes()
+    {
+        cout<<"Enter numberof mangoes :"<< endl;
+        cin>>fruit_no;
+    }
+};
+
+int main()
+{
+    Fruit obj;
+    
+    Apples obja;
+    obja.get_apples();
+    
+    Mangoes objm;
+    objm.get_mangoes();
+    
+    cout<<"Total number of Apples in a basket are :";
+    cout<<obja.fruit_no<<endl;
+    cout<<"Total number of Mangoes in a basket are :";
+    cout<<objm.fruit_no<<endl;
+    cout<<"Total number of Fruits in a basket are :";
+    cout<<obja.fruit_no+objm.fruit_no;
+}
