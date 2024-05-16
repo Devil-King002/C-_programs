@@ -104,3 +104,42 @@ int main() {
     
     return 0;
 }
+
+// Friend function + Operator overloading 
+#include <iostream>
+using namespace std;
+
+class Abc {
+public:
+    int v1, v2;
+
+    void getInput() {
+        cout << "Enter two Numbers :" << endl;
+        cin >> v1 >> v2;
+    }
+
+    void display() {
+        cout << v1 << endl << v2;
+    }
+
+    friend Abc operator+(Abc obj1, Abc obj2);
+};
+
+Abc operator+(Abc obj1, Abc obj2) {
+    Abc temp;
+    temp.v1 = obj1.v1 + obj2.v1;
+    temp.v2 = obj1.v2 + obj2.v2;
+    return temp;
+}
+
+int main() {
+    Abc objx, objy, objz;
+
+    objx.getInput();
+    objy.getInput();
+
+    objz = objx + objy;
+    objz.display();
+
+    return 0;
+}
