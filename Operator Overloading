@@ -1,0 +1,106 @@
+// Operator overloading - means your operator should work with class object. 
+// redefine the characteristics of an operator
+
+// WAP to overload the unary (++, --) and binary operator (+) in c++
+// Unary Operator
+
+#include <iostream>
+using namespace std;
+
+class TestOperator
+{
+    public:
+    int v1;
+    TestOperator()
+    {
+        cout<< "Enter a Number :"<< endl;
+        cin>> v1;
+    }
+    void operator ++()
+    {
+        v1=v1+1;
+    }
+    void operator --()
+    {
+        v1=v1-1;
+    }
+    void display()
+    {
+        cout<< "After overloading :";
+        cout<< v1<< endl;
+    }
+};
+
+int main() {
+    TestOperator opr;
+    ++ opr;
+    opr.display();
+    --opr;
+    opr.display();
+    return 0;
+}
+
+//Binary Operator
+// operator overloading using void
+#include <iostream>
+using namespace std;
+
+class TestOpr2
+{
+    public:
+    int v1;
+    void getInput()
+    {
+        cout<< "Enter the number :"<< endl;
+        cin >> v1;
+    }
+    void operator +(TestOpr2 obj)
+    {
+        obj.v1=obj.v1+1;
+        cout<< "Result :" <<obj.v1;
+    }
+};
+int main() {
+    TestOpr2 objx, objy, objz;
+    objx.getInput();
+    objy.getInput();
+    objz.getInput();
+    objx+objy;
+    
+    return 0;
+}
+
+// operator overloading using class name
+#include <iostream>
+using namespace std;
+
+class TestOpr2
+{
+    public:
+    int v1;
+    void getInput()
+    {
+        cout<< "Enter the number :"<< endl;
+        cin >> v1;
+    }
+    TestOpr2 operator +(TestOpr2 obj)
+    {
+        obj.v1=obj.v1+1;
+        return(obj);
+    }
+    void display()
+    {
+        cout<<v1;
+    }
+};
+int main() {
+    TestOpr2 objx, objy, objz;
+    objx.getInput();
+    objy.getInput();
+    objz.getInput();
+    
+    objz=objx+objy;
+    objz.display();
+    
+    return 0;
+}
