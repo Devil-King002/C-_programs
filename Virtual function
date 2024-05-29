@@ -1,0 +1,46 @@
+#include <iostream>
+using namespace std;
+class Parent
+{
+    public:
+    virtual void sum()
+    {
+        cout << "Sum of Parent \n";
+    }
+};
+class ChildA: public Parent
+{
+    public:
+    virtual void sum()
+    {
+        cout<< "Sum of Child A \n";
+    }
+};
+class ChildB : public ChildA
+{
+    public:
+    void sum()
+    {
+        cout<< "Sum of child B \n";
+    }
+};
+
+int main() 
+{
+    Parent *parentobj; //dynamic poly
+    
+    Parent pobj;
+    ChildA childaobj;
+    ChildB childbobj;
+    
+    parentobj=&pobj;
+    parentobj->sum();// sum of parent class
+    
+    parentobj= &childaobj;
+    parentobj->sum();// sum of child class
+    
+    parentobj=&childbobj;
+    parentobj->sum();
+
+    
+}
