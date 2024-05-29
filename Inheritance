@@ -1,0 +1,33 @@
+#include<iostream>
+using namespace std;
+class Parent
+{
+    public : 
+    void sum()
+    {
+        cout << "Parent Class\n";
+    }
+};
+class Child : public Parent
+{
+    public : 
+    void sum()
+    {
+        cout << "Child Class\n";
+    }
+};
+class Child1:public Child
+{
+    public : 
+    
+    
+};
+int main()
+{
+   Parent P1;
+   P1.sum();
+   Child C1;
+   C1.sum();
+   Child1 CH;
+   CH.sum();
+}
